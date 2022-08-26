@@ -4,13 +4,25 @@ export const Nav = () => {
 
     return (
         <NavContainer>
-            <ul>
-                <li></li>
-            </ul>
+            <NavList>
+                <NavListIteam></NavListIteam>
+                <NavListIteam></NavListIteam>
+                <NavListIteam></NavListIteam>
+
+            </NavList>
         </NavContainer>
     );
 }
 
 const NavContainer = styled.nav`
     display: flex;
+    
+
 `;
+
+const NavList = styled.ul`
+`;
+
+const NavListIteam  = styled.li`
+`;
+
