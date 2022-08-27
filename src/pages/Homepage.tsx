@@ -8,7 +8,6 @@ export const Homepage = () => {
 
     return (
         <Container>
-            <Nav/>
             <Header/>
             <Main/>
         </Container>
