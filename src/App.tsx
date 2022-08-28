@@ -10,23 +10,21 @@ import FavoritesPage from './pages/FavoritesPage';
 import ProductPage from './pages/ProductPage';
 import SearchPage from './pages/SearchPage';
 
-
 function App() {
     const appRef = React.createRef<HTMLDivElement>();
     return (
-        <>
             <AuthContext.Provider value={appRef}>
                 <Nav/>
                 <Routes>
                     <Route path='/' element={<Homepage />} />
-                    <Route path='/search' element={<SearchPage}/>
+                    <Route path='/search' element={<SearchPage/>}/>
                     <Route path='/favorites' element={<FavoritesPage/>}/>
                     <Route path='/product' element={<ProductPage/>}/>
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
                 </Routes>
+
             </AuthContext.Provider>
-        </>
     );
 }
 
