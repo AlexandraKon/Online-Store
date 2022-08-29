@@ -7,6 +7,7 @@ export const NavContainer = styled.nav`
     z-index: 100;
     width: 100%;
     position: absolute;
+    margin-top: 10px;
 `;
 
 export const NavList = styled.ul`
@@ -33,7 +34,7 @@ export const NavButton = styled.button`
 `;
 
 export const NavLogo = styled.img`
-    width: 180px;
+    width: 200px;
 `;
 
 export const NavIcon = styled.img`
