@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import brandLogo from '../../images/nav/brand-logo.svg';
 import searchIcon from '../../images/nav/searchicon.svg';
 import favIcon from '../../images/nav/favicon.svg';

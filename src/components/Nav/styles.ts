@@ -14,20 +14,22 @@ export const NavList = styled.ul`
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    margin-right: 50px;
-
+    margin-right: 30px;
+    margin-left: 30px;
 `;
 
 export const NavListIteam  = styled.li`
     list-style:none;
+    margin: 10px;
 `;
 
 export const NavButton = styled.button`
     font-weight: 400;
-    line-height: 20px;
     color: #FFFFFF;
     border: none;
     background:none;
+    display: flex;
+    align-items: center;
 `;
 
 export const NavLogo = styled.img`
@@ -36,4 +38,6 @@ export const NavLogo = styled.img`
 
 export const NavIcon = styled.img`
 width: 15px;
+margin-right: 5px;
+
 `;
