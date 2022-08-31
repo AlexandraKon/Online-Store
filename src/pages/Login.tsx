@@ -30,7 +30,25 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
       });
   };
 
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
   return (
-    <div>Login</div>
+    <section>
+      <div>
+        <h2>CREATE ACCOUNT</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type='email'
+            placeholder='Email'
+            autoComplete='email'
+          
+          />
+        </form>
+      </div>
+    </section>
   )
 }
