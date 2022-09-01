@@ -1,8 +1,29 @@
-import React from 'react';
 import styled from "styled-components";
 
 
 const Signup = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const [isSignInError, setIsSignInError] = useState(false);
+  const handleSubmit = (email: string, password: string) => {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then(({ user }) => {
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.refreshToken,
+            name: user.displayName,
+          })
+        );
+        navigate('/');
+      })
+      .catch((error) => {
+        setIsSignInError(true);
+      });
+  };
+
   return (
     <LoginSection>
       <LoginDiv>
@@ -29,10 +50,21 @@ const Signup = () => {
             <Link to='/signup'>I HAVE AN ACCOUNT</Link>
           </FormText>
         </FormBlock>
+        { isSignInError ? (
+          <LoginError>Email or password is wrong. Please, try again.</LoginError>
+        ) : null }
       </LoginDiv>
     </LoginSection>
   )
 }
+
+const LoginError = styled.section`
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+color:darkred;
+margin-top: 8px;
+`;
 
 const LoginSection = styled.section`
 
