@@ -3,9 +3,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import { rootSaga } from "../saga/sagas";
 
-
-let sagaMiddleware = createSagaMiddleware();
-const middleware = [sagaMiddleware];
+const sagaMiddleware = createSagaMiddleware();
+const middleware: any[] = [sagaMiddleware];
 
 export const allReducers = combineReducers ({
 

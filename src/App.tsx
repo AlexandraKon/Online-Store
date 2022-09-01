@@ -2,9 +2,9 @@
 import React from 'react';
 import "./App.css";
 import { Route, Routes } from 'react-router-dom';
-import { Homepage } from "./pages/Homepage";
+import { Homepage } from "./pages/HomePage";
 import { Nav } from './components/Nav/Nav';
-import Login from './pages/Login';
+import Login from './pages/LoginPage';
 import Signup from './pages/Signup';
 import { AuthContext } from './context/AuthContext';
 import FavoritesPage from './pages/FavoritesPage';
