@@ -40,7 +40,7 @@ export const Nav = () => {
                     </Link>
                 </NavListIteam>
                 <NavListIteam>
-                    <Link to='/login'>
+                    <Link to='/signin'>
                         <NavButton>SIGN IN</NavButton>
                     </Link>
                 </NavListIteam>

@@ -49,7 +49,7 @@ export const Signup: React.FC<LoginProps> = ({
             <FormText>By signing up you agree to Terms of Service and Privacy Policy</FormText>
             <FormBtn onClick={(e) => {e.preventDefault(); handleClick(name, lastname, email, password)}}>SIGN UP</FormBtn>
             <FormText>
-            <Link to='/signup'>I HAVE AN ACCOUNT</Link>
+            <Link to='/signin'>I HAVE AN ACCOUNT</Link>
             </FormText>
         </FormBlock>
     </LoginDiv>

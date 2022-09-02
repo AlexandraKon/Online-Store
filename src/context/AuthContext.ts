@@ -4,4 +4,4 @@ export const AuthContext = React.createContext<React.RefObject<HTMLDivElement> |
 
 export function UserAuth() {
     return useContext(AuthContext);
-  };
+};

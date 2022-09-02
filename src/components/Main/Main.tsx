@@ -22,13 +22,13 @@ export const Main = () => {
                 <MainCategoryItem>
                     <MainCategoryBtn>
                     <MainIcon src={teesIcon} alt="tees"/>
-                     Tees
-                     </MainCategoryBtn>
+                        Tees
+                    </MainCategoryBtn>
                 </MainCategoryItem>
                 <MainCategoryItem>
                     <MainCategoryBtn>
                     <MainIcon src={swimIcon} alt="swim"/>
-                     Swimwear</MainCategoryBtn>
+                        Swimwear</MainCategoryBtn>
                 </MainCategoryItem>
                 <MainCategoryItem>
                     <MainCategoryBtn> 
@@ -47,7 +47,6 @@ export const Main = () => {
                 </MainCategoryItem>
 
             </MainCategoryList>
-
         </MainContainer>
     );
 }
