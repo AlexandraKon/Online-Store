@@ -3,19 +3,14 @@ import { useNavigate } from 'react-router';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { setUser } from "../../components/user/index";
 import { useAppDispatch } from "../../hooks/hooks";
-import { Link } from "react-router-dom";
-import { LoginSection, LoginDiv, LoginTitle, FormBlock, FormInput, FormCheckInput, FormText, FormBtn} from './styles';
+import { Login } from "../../components/Auth/Login/login";
 
 type LoginPageProps = {};
 
 export const LoginPage: React.FC<LoginPageProps> = () => {
-
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
   const handleRegistration = (name: string, email: string, password: string) => {
     const auth = getAuth();
     createUserWithEmailAndPassword (auth, email, password)
@@ -44,7 +39,9 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
     <LoginSection>
       <LoginDiv>
         <LoginTitle>CREATE ACCOUNT</LoginTitle>
-        
+        <Login handleClick={handleRegistration}>
+
+        </Login>
         
       </LoginDiv>
     </LoginSection>
