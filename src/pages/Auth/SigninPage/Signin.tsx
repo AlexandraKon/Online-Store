@@ -1,37 +1,22 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState }from 'react';
-import { FormBlock, FormInput, FormCheckInput, FormText} from './styles';
+import { LoginDiv, LoginTitle, FormBlock, FormInput, FormCheckInput, FormText} from '../styles';
 import { FormBtn} from '../../../ui/formBtn/FormBtn';
 import { Link } from "react-router-dom";
 
 type LoginProps = { 
-    className: string;
-    handleClick: (name: string, lastname:string, email:string, password:string) => void;
+    handleClick: ( email:string, password:string) => void;
 };
 
-export const login: React.FC<LoginProps> = ({
+export const Signin: React.FC<LoginProps> = ({
     handleClick,
-    className = "",
 }) => {
-    const [name, setName] = useState("");
-    const [lastname, setLastname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     return (
-    <FormBlock>
-            <FormInput
-            onChange={(e) => setName(e.target.value)}
-            type='text'
-            placeholder='First Name'
-            autoComplete='name'
-            />
-            <FormInput
-            onChange={(e) => setLastname(e.target.value)}
-            type='text'
-            placeholder='Last Name'
-            autoComplete='lastname'
-            />
+    <LoginDiv>
+        <LoginTitle>SIGN IN</LoginTitle>
+        <FormBlock>
             <FormInput
             onChange={(e) => setEmail(e.target.value)}
             type='email'
@@ -48,10 +33,11 @@ export const login: React.FC<LoginProps> = ({
             <FormText>Let's get personal! We'll send you only the good stuff: <br/>
             Exclusive early access to Sale, new arrivals and promotions. No nasties.</FormText>
             <FormText>By signing up you agree to Terms of Service and Privacy Policy</FormText>
-            <FormBtn onClick={(e) => {e.preventDefault(); handleClick(name, lastname, email, password)}}>SIGN UP</FormBtn>
+            <FormBtn onClick={(e) => {e.preventDefault(); handleClick( email, password)}}>LOG IN</FormBtn>
             <FormText>
-            <Link to='/signup'>I HAVE AN ACCOUNT</Link>
+            <Link to='/signup'>I DO NOT HAVE AN ACCOUNT</Link>
             </FormText>
         </FormBlock>
+    </LoginDiv>
     );
 };

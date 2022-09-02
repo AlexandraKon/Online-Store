@@ -31,3 +31,7 @@ export const FormText = styled.p`
 export const FormBtn = styled.input`
 
 `;
+
+export const TextError = styled.p`
+
+`;

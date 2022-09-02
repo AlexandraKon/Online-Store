@@ -4,12 +4,12 @@ import "./App.css";
 import { Route, Routes } from 'react-router-dom';
 import { Homepage } from "./pages/HomePage";
 import { Nav } from './components/Nav/Nav';
-import Login from './pages/Login-Page/LoginPage';
-import Signup from './pages/Signup';
 import { AuthContext } from './context/AuthContext';
 import FavoritesPage from './pages/FavoritesPage';
 import ProductPage from './pages/ProductPage';
 import SearchPage from './pages/SearchPage';
+import { SigninPage } from './pages/Auth/SigninPage/SigninPage';
+import { LoginPage } from './pages/Auth/LoginPage/LoginPage';
 
 function App() {
     const appRef = React.createRef<HTMLDivElement>();
@@ -21,10 +21,9 @@ function App() {
                     <Route path='/search' element={<SearchPage/>}/>
                     <Route path='/favorites' element={<FavoritesPage/>}/>
                     <Route path='/product' element={<ProductPage/>}/>
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/signup' element={<Signup />} />
+                    <Route path='/signin' element={<SigninPage />} />
+                    <Route path='/signup' element={<LoginPage />} />
                 </Routes>
-
             </AuthContext.Provider>
     );
 }

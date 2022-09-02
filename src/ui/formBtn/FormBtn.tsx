@@ -1,8 +1,8 @@
-import React from 'react';
+import styled from "styled-components";
+
 
 type FormBtnProps = { 
-    children?: React.ReadNode;
-    className?: string;
+    children?: React.ReactNode;
     type?: "button" | "submit" | "reset";
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     role?: string;
@@ -10,17 +10,20 @@ type FormBtnProps = {
 
 export const FormBtn: React.FC<FormBtnProps> = ({
     children,
-    className,
     type, 
     onClick,
     role,
 }) => {
     return (
-    <button
+    <FormButton
     type={type}
     onClick={onClick}
     role={role}
     >
-    {children}</button>
+    {children}</FormButton>
     );
 };
+
+const FormButton = styled.button`
+    
+`;

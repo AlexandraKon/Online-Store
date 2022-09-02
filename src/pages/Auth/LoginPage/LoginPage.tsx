@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { setUser } from "../../components/user/index";
-import { useAppDispatch } from "../../hooks/hooks";
-import { Login } from "../../components/Auth/Login/login";
+import { setUser } from "../../../components/user/index";
+import { useAppDispatch } from "../../../hooks/hooks";
+import { Signup } from "./Signup";
+import { LoginSection } from "../styles";
 
 type LoginPageProps = {};
 
@@ -29,7 +29,7 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
         );
       })
       .then(() => {
-        navigate('/signup');
+        navigate('/signin');
     })
   })
   }
@@ -37,13 +37,7 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
 
   return (
     <LoginSection>
-      <LoginDiv>
-        <LoginTitle>CREATE ACCOUNT</LoginTitle>
-        <Login handleClick={handleRegistration}>
-
-        </Login>
-        
-      </LoginDiv>
+        <Signup handleClick={handleRegistration}></Signup>
     </LoginSection>
   )
 }
