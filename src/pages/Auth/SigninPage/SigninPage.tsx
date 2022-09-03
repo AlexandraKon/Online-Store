@@ -66,5 +66,5 @@ export const SigninPage = () => {
         </LoginConteiner>
     </LoginSection>
     
-  )
-}
+  );
+};
