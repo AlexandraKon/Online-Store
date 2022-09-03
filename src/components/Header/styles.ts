@@ -17,7 +17,7 @@ object-fit: cover;
 
 export const HeaderDesc = styled.div`
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 10%;
     padding: 1rem;
     color: #FFFFFF;

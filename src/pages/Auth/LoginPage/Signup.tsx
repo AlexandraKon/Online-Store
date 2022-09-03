@@ -1,7 +1,8 @@
 import React, { useState }from 'react';
-import { LoginDiv, LoginTitle, FormBlock, FormInput, FormCheckInput, FormText} from '../styles';
+import { LoginDiv, LoginTitleDiv, LoginTitle, FormBlock, FormInput, FormCheckDiv, FormCheckInput, FormText, FormTextAcc} from '../styles';
 import { FormBtn} from '../../../ui/formBtn/FormBtn';
 import { Link } from "react-router-dom";
+import { AiOutlineClose } from 'react-icons/ai';
 
 type LoginProps = { 
     handleClick: (name: string, lastname:string, email:string, password:string) => void;
@@ -17,7 +18,12 @@ export const Signup: React.FC<LoginProps> = ({
 
     return (
         <LoginDiv>
-        <LoginTitle>CREATE ACCOUNT</LoginTitle>
+            <LoginTitleDiv>
+                <LoginTitle>CREATE ACCOUNT</LoginTitle>
+                <Link to='/'>
+                    <AiOutlineClose fontSize={22}/>
+                </Link>
+            </LoginTitleDiv>
         <FormBlock>
             <FormInput
             onChange={(e) => setName(e.target.value)}
@@ -43,14 +49,21 @@ export const Signup: React.FC<LoginProps> = ({
                 placeholder='Password'
                 autoComplete='current-password'
             />
-            <FormCheckInput type='checkbox'/>
-            <FormText>Let's get personal! We'll send you only the good stuff: <br/>
-            Exclusive early access to Sale, new arrivals and promotions. No nasties.</FormText>
-            <FormText>By signing up you agree to Terms of Service and Privacy Policy</FormText>
+            <FormCheckDiv>
+                <FormCheckInput type='checkbox'/>
+                <FormText>Let's get personal! We'll send you only the good stuff: <br/>
+                Exclusive early access to Sale, new arrivals and promotions. No nasties.</FormText>
+            </FormCheckDiv>
+            
+            <FormText>By signing up you agree to <strong>Terms of Service</strong> and <strong>Privacy Policy</strong></FormText>
             <FormBtn onClick={(e) => {e.preventDefault(); handleClick(name, lastname, email, password)}}>SIGN UP</FormBtn>
-            <FormText>
-            <Link to='/signin'>I HAVE AN ACCOUNT</Link>
-            </FormText>
+                <Link to='/signin'>
+                <FormTextAcc>
+
+                    I HAVE AN ACCOUNT
+                    </FormTextAcc>
+
+                    </Link>
         </FormBlock>
     </LoginDiv>
     );

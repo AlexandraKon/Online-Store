@@ -25,5 +25,12 @@ export const FormBtn: React.FC<FormBtnProps> = ({
 };
 
 const FormButton = styled.button`
-    
+    background: #000000;
+    color: white;
+    width: 240px;
+    height: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 115px;
+    margin-right: 115px;
 `;

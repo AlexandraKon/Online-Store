@@ -34,7 +34,7 @@ export const LoginTitleDiv = styled.div`
 
 export const LoginTitle = styled.h2`
     font-size: 22px;
-    line-height: 48px;
+    line-height: 38px;
     letter-spacing: 0.04em;
     color: #000F08;
 `;
@@ -47,24 +47,38 @@ export const FormBlock = styled.form`
     margin-right: 40px;
 `;
 export const FormInput = styled.input`
-
+    width: 100%;
+    font-size: 16px;
+    line-height: 14px;
+    border-bottom: 2px solid #D8D8D8;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 `;
 
 export const FormCheckDiv = styled.div`
     display: flex;
-    `;
+    align-items: center;
+    justify-content: space-between;
+`;
 
 
 export const FormCheckInput = styled.input`
-
+    background-color: black;
+    width: 17px;
+    height: 17px;
 `;
 
 export const FormText = styled.p`
-
+    font-size: 14px;
+    line-height: 26px;
+    color: #000F08;
 `;
 
-export const FormBtn = styled.input`
-
+export const FormTextAcc = styled.p`
+font-size: 14px;
+    line-height: 26px;
+    text-decoration-line: underline;
+    color: #000F08;
 `;
 
 export const TextError = styled.p`

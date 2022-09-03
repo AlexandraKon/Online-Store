@@ -9,6 +9,7 @@ export const MainContainer = styled.main`
 export const MainCategory = styled.h2`
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    font-size: 40px;
     color: #000F08;
     margin: 50px;
     text-align:center;

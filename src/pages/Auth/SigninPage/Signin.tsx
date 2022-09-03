@@ -1,5 +1,5 @@
 import React, { useState }from 'react';
-import { LoginDiv, LoginTitleDiv, LoginTitle, FormBlock, FormInput, FormCheckDiv, FormCheckInput, FormText} from '../styles';
+import { LoginDiv, LoginTitleDiv, LoginTitle, FormBlock, FormInput, FormCheckDiv, FormCheckInput, FormText, FormTextAcc} from '../styles';
 import { FormBtn} from '../../../ui/formBtn/FormBtn';
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from 'react-icons/ai';
@@ -36,15 +36,14 @@ export const Signin: React.FC<LoginProps> = ({
                 autoComplete='current-password'
             />
             <FormCheckDiv>
-                <FormCheckInput type='checkbox'/>
+                <FormCheckInput type="checkbox"/>
                 <FormText>Let's get personal! We'll send you only the good stuff: <br/>
                 Exclusive early access to Sale, new arrivals and promotions. No nasties.</FormText>
             </FormCheckDiv>
-            <FormText>By signing up you agree to Terms of Service and Privacy Policy</FormText>
-            <FormBtn onClick={(e) => {e.preventDefault(); handleClick( email, password)}}>LOG IN</FormBtn>
-            <FormText>
+            <FormBtn onClick={(e) => {e.preventDefault(); handleClick( email, password)}}>SIGN IN</FormBtn>
+            <FormTextAcc>
             <Link to='/signup'>I DO NOT HAVE AN ACCOUNT</Link>
-            </FormText>
+            </FormTextAcc>
         </FormBlock>
     </LoginDiv>
     );
