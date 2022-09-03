@@ -12,9 +12,8 @@ import { SigninPage } from './pages/Auth/SigninPage/SigninPage';
 import { LoginPage } from './pages/Auth/LoginPage/LoginPage';
 
 function App() {
-    const appRef = React.createRef<HTMLDivElement>();
     return (
-            <AuthContext.Provider value={appRef}>
+            <>
                 <Nav/>
                 <Routes>
                     <Route path='/' element={<Homepage />} />
@@ -24,7 +23,7 @@ function App() {
                     <Route path='/signin' element={<SigninPage />} />
                     <Route path='/signup' element={<LoginPage />} />
                 </Routes>
-            </AuthContext.Provider>
+            </>
     );
 }
 

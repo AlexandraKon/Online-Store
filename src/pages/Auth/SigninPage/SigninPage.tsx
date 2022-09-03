@@ -1,46 +1,69 @@
 import { useState } from "react";
-import { Signin } from "./Signin";
-import { LoginSection, LoginConteiner, TextError } from "../styles";
-import { useAppDispatch } from "../../../hooks/hooks";
 import { useNavigate } from 'react-router';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { setUser } from "../../../components/user/index";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../../firebase';
+import { LoginDiv, LoginTitleDiv, LoginTitle, FormBlock, FormInput, FormCheckDiv, FormCheckInput, FormText, FormTextAcc} from '../styles';
+import { FormBtn} from '../../../ui/formBtn/FormBtn';
+import { Link } from "react-router-dom";
+import { AiOutlineClose } from 'react-icons/ai';
+import { LoginSection, LoginConteiner } from "../styles";
 
-type LoginPageProps = {};
-
-export const SigninPage: React.FC<LoginPageProps> = () => {
-  const dispatch = useAppDispatch();
+export const SigninPage = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
-
-  const [isSignInError, setIsSignInError] = useState(false);
   
-  const handleLogin = (email: string, password: string) => {
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
-        dispatch(
-          setUser({
-            email: user.email,
-            id: user.uid,
-            token: user.refreshToken,
-            name: user.displayName,
-          })
-        );
-        navigate("/");
-      })
-      .catch((error) => {
-        setIsSignInError(true);
-      });
+  function logIn(email:string, password: string) {
+    return signInWithEmailAndPassword(auth, email, password);
+  }
+
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setError('')
+    try {
+      await logIn(email, password)
+      navigate('/')
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   return (
     <LoginSection>
       <LoginConteiner>
-        <Signin handleClick={handleLogin}></Signin>
+      <LoginDiv>
+        <LoginTitleDiv>
+            <LoginTitle>SIGN IN</LoginTitle>
+            <Link to='/'>
+                <AiOutlineClose fontSize={22}/>
+            </Link>
+        </LoginTitleDiv>
+        <FormBlock onSubmit={handleSubmit}>
+            <FormInput
+            onChange={(e) => setEmail(e.target.value)}
+            type='email'
+            placeholder='Email'
+            autoComplete='email'
+            />
+            <FormInput
+                onChange={(e) => setPassword(e.target.value)}
+                type='password'
+                placeholder='Password'
+                autoComplete='current-password'
+            />
+            <FormCheckDiv>
+                <FormCheckInput type="checkbox"/>
+                <FormText>Let's get personal! We'll send you only the good stuff: <br/>
+                Exclusive early access to Sale, new arrivals and promotions. No nasties.</FormText>
+            </FormCheckDiv>
+            <FormBtn >SIGN IN</FormBtn>
+            <FormTextAcc>
+            <Link to='/signup'>I DO NOT HAVE AN ACCOUNT</Link>
+            </FormTextAcc>
+        </FormBlock>
+    </LoginDiv>
         </LoginConteiner>
-        {isSignInError ? (
-          <TextError>Email or password is wrong. Please, try again.</TextError>
-        ) : null
-        }
     </LoginSection>
     
   )

@@ -1,7 +1,21 @@
-import React, {useContext} from 'react';
+import { createContext, useContext } from "react";
+import { TStorage } from "../types/types";
 
-export const AuthContext = React.createContext<React.RefObject<HTMLDivElement> | null>(null);
+type TAuthContext = {
+    value: {
+        isAuth: boolean,
+    },
+    setItem: (item: TStorage) => void,
+};
 
+const authContextInitial: TAuthContext = {
+    value: {
+        isAuth: false,
+    },
+    setItem: () => {},
+};
+
+export const AuthContext = createContext(authContextInitial);
 export function UserAuth() {
     return useContext(AuthContext);
 };
