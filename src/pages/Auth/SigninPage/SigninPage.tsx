@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Signin } from "./Signin";
-import { LoginSection, TextError } from "../styles";
+import { LoginSection, LoginConteiner, TextError } from "../styles";
 import { useAppDispatch } from "../../../hooks/hooks";
 import { useNavigate } from 'react-router';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -34,7 +34,9 @@ export const SigninPage: React.FC<LoginPageProps> = () => {
   };
   return (
     <LoginSection>
+      <LoginConteiner>
         <Signin handleClick={handleLogin}></Signin>
+        </LoginConteiner>
         {isSignInError ? (
           <TextError>Email or password is wrong. Please, try again.</TextError>
         ) : null

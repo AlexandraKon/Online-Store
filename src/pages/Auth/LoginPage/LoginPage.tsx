@@ -3,7 +3,7 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase
 import { setUser } from "../../../components/user/index";
 import { useAppDispatch } from "../../../hooks/hooks";
 import { Signup } from "./Signup";
-import { LoginSection } from "../styles";
+import { LoginSection, LoginConteiner } from "../styles";
 
 type LoginPageProps = {};
 
@@ -37,7 +37,9 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
 
   return (
     <LoginSection>
-        <Signup handleClick={handleRegistration}></Signup>
+      <LoginConteiner>
+      <Signup handleClick={handleRegistration}></Signup>
+      </LoginConteiner>
     </LoginSection>
   )
 }

@@ -1,7 +1,8 @@
 import React, { useState }from 'react';
-import { LoginDiv, LoginTitle, FormBlock, FormInput, FormCheckInput, FormText} from '../styles';
+import { LoginDiv, LoginTitleDiv, LoginTitle, FormBlock, FormInput, FormCheckDiv, FormCheckInput, FormText} from '../styles';
 import { FormBtn} from '../../../ui/formBtn/FormBtn';
 import { Link } from "react-router-dom";
+import { AiOutlineClose } from 'react-icons/ai';
 
 type LoginProps = { 
     handleClick: ( email:string, password:string) => void;
@@ -15,7 +16,12 @@ export const Signin: React.FC<LoginProps> = ({
 
     return (
     <LoginDiv>
-        <LoginTitle>SIGN IN</LoginTitle>
+        <LoginTitleDiv>
+            <LoginTitle>SIGN IN</LoginTitle>
+            <Link to='/'>
+                <AiOutlineClose fontSize={22}/>
+            </Link>
+        </LoginTitleDiv>
         <FormBlock>
             <FormInput
             onChange={(e) => setEmail(e.target.value)}
@@ -29,9 +35,11 @@ export const Signin: React.FC<LoginProps> = ({
                 placeholder='Password'
                 autoComplete='current-password'
             />
-            <FormCheckInput type='checkbox'/>
-            <FormText>Let's get personal! We'll send you only the good stuff: <br/>
-            Exclusive early access to Sale, new arrivals and promotions. No nasties.</FormText>
+            <FormCheckDiv>
+                <FormCheckInput type='checkbox'/>
+                <FormText>Let's get personal! We'll send you only the good stuff: <br/>
+                Exclusive early access to Sale, new arrivals and promotions. No nasties.</FormText>
+            </FormCheckDiv>
             <FormText>By signing up you agree to Terms of Service and Privacy Policy</FormText>
             <FormBtn onClick={(e) => {e.preventDefault(); handleClick( email, password)}}>LOG IN</FormBtn>
             <FormText>
