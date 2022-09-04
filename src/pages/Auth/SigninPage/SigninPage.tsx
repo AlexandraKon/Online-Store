@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../../firebase';
 import { LoginDiv, LoginTitleDiv, LoginTitle, FormBlock, FormInput, FormCheckDiv, FormCheckInput, FormText, FormTextAcc} from '../styles';
-import { FormBtn} from '../../../ui/formBtn/FormBtn';
+import { FormBtn} from '../../../components/UI/formBtn/FormBtn';
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from 'react-icons/ai';
 import { LoginSection, LoginConteiner } from "../styles";

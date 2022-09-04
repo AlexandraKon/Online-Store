@@ -8,7 +8,7 @@ import { db } from '../../../firebase';
 import React, { useState } from 'react';
 
 import { LoginDiv, LoginTitleDiv, LoginTitle, FormBlock, FormInput, FormCheckDiv, FormCheckInput, FormText, FormTextAcc} from '../styles';
-import { FormBtn} from '../../../ui/formBtn/FormBtn';
+import { FormBtn} from '../../../components/UI/formBtn/FormBtn';
 import { Link } from "react-router-dom";
 import { AiOutlineClose } from 'react-icons/ai';
 

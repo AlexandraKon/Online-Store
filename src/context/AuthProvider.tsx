@@ -10,7 +10,7 @@ const AuthContextProvider = ({ children }: Props) => {
     const initialValue = {
         isAuth: true,
     };
-    const { value, setItem } = useStorage('auth', initialValue)
+    const { value, setItem } = useStorage('auth', initialValue);
 
     return (
         <AuthContext.Provider value={{ value, setItem }}>
