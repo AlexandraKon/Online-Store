@@ -6,7 +6,6 @@ export const NavContainer = styled.nav`
     justify-content: space-between;
     z-index: 100;
     width: 100%;
-    position: absolute;
     margin-top: 10px;
 `;
 
@@ -26,7 +25,7 @@ export const NavListIteam  = styled.li`
 
 export const NavButton = styled.button`
     font-weight: 400;
-    color: #FFFFFF;
+    color: black;
     border: none;
     background:none;
     display: flex;

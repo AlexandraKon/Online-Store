@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer/Footer";
 import { Nav } from "../components/Nav/Nav";
 import { SaleProd } from "../components/Sale/SaleProd";
 import { requests } from "../api/config";
+import { Shop } from '../components/Shop/Shop';
 
 export const Homepage = () => {
 
@@ -13,6 +14,7 @@ export const Homepage = () => {
             <Header/>
             <Main/>
             <SaleProd title='#MODNIKKY_Sale' fetchURL={requests.urlbase}/>
+            <Shop/>
             <Footer/>
         </>
     );

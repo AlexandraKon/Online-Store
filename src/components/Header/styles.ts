@@ -23,7 +23,7 @@ export const HeaderDesc = styled.div`
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         position: relative;
         color: black;
         display: flex;

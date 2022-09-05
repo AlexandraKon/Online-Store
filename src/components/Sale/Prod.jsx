@@ -19,12 +19,13 @@ export const Prod = ({item}) => {
         await updateDoc(movieID, {
             savedShows: arrayUnion({
             id: item.id,
-            title: item.title,
-            img: item.backdrop_path
+            title: item.name,
+            img: item.images[0]
             })
         });
         } else {
-        alert('Please, log in to save a movie!')
+        alert('Please, log in to save a movie!');
+        <Link to='/'/>
       }
     }
   return (

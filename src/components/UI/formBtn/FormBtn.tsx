@@ -33,4 +33,8 @@ const FormButton = styled.button`
     margin-bottom: 40px;
     margin-left: 115px;
     margin-right: 115px;
+
+    @media (max-width: 768px) {
+        margin-left: 0px;
+    }
 `;
