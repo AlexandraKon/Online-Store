@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Swiper } from 'swiper/react';
-import iconNextArrow from '../../../assets/icons/slider/icon-next-arrow.svg'
-import iconPrevArrow from '../../../assets/icons/slider/icon-prev-arrow.svg'
+import iconNextArrow from '../../../images/slider/icon-next-arrow.svg'
+import iconPrevArrow from '../../../images/slider/icon-prev-arrow.svg'
 
 export const StyledSwiper = styled(Swiper)`
     & .swiper-slide {

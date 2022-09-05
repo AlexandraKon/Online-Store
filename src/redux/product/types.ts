@@ -1,10 +1,12 @@
 import { TProduct } from '../../types/types';
 
-export type TProductsState = {
-    saleProducts: {
-        products: TProduct[] | null
+type Props = {
+    products: TProduct[] | null
         isLoading: boolean
         error: null | Error
-    }
+}
+
+export type TProductsState = {
+    saleProducts: Props,
     currentProduct: TProduct | null
 }

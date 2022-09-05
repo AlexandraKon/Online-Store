@@ -12,7 +12,7 @@ type Props = {
     product: TProduct,
 }
 
-export const ProductCard = memo(({product}: Props) => { 
+export const ProductCard =  ({product}: Props) => { 
     const [like, setLike] = useState(false);
     const [saved, setSaved] =useState(false);
 
@@ -49,4 +49,4 @@ export const ProductCard = memo(({product}: Props) => {
         </Link>
     </ProductDiv>
   );
-});
+};
