@@ -7,3 +7,6 @@ The Single Page Application on React/ Typescript
 
 ### Technologies used:
 React - Typescript - Redux - Firebase
+
+
+### Summery: 
