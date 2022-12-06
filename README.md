@@ -1,12 +1,10 @@
 # Online-Store
 
-
 The Single Page Application on React/ Typescript
-### Link to access:
- 
+## Link to access
 
-### Technologies used:
+## Technologies used
 React - Typescript - Redux - Firebase
 
 
-### Summery: 
+## Summery
